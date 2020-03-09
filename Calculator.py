@@ -10,22 +10,23 @@ def devide():
 def add():
     return num1 + num2
 
-bye = input('Press Enter to start:')
 
-while bye != 'yes':
-    stop = input('Want to quite?')
-    if stop == 'quite':
-        bye = False
+stop = "quit"
+
+stop += input("Type quit to exit:")
+
+for x in stop:
+    if x == stop:
         break
     else:
         num1 = int(input('Choose a number: '))
         num2 = int(input('Choose another number: '))
-        choice = input('Type: subtract, multiply, devide or add: ')
-        if choice == 'subtract':
+        choice = str(input('Type: subtract, multiply, devide or add: '))
+        if choice == 'subtract' or "-":
             print(subtract())
-        elif choice == 'multiply':
+        elif choice == 'multiply' or "*":
             print(multiply())
-        elif choice == 'devide':
+        elif choice == 'devide' or "/":
             print(devide())
-        else:
+        elif choice == "add" or "+":
             print(add())
