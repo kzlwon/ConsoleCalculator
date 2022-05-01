@@ -1,32 +1,29 @@
-def subtract():
-    return num1 - num2
+def subtract(num1, num2):
+        return num1 - num2
 
-def multiply():
+def multiply(num1, num2):
     return num1 * num2
 
-def devide():
+def devide(num1, num2):
     return num1 / num2
 
-def add():
+def add(num1, num2):
     return num1 + num2
 
-
-stop = "quit"
-
-stop += input("Type quit to exit:")
-
-for x in stop:
-    if x == stop:
+while True:
+    num1 = int(input('Choose a number: '))
+    choice = input('Type >> +, -, *, /: ')
+    num2 = int(input('Choose another number: '))
+    if choice == '-':
+        print(subtract(num1, num2))
+    elif choice == '*':
+        print(multiply(num1, num2))
+    elif choice == '/':
+        print(devide(num1, num2))
+    elif choice == '+':
+        print(add(num1, num2))
+    stop = input("Type quit to exit: ")
+    if stop == 'quit':
         break
     else:
-        num1 = int(input('Choose a number: '))
-        num2 = int(input('Choose another number: '))
-        choice = str(input('Type: subtract, multiply, devide or add: '))
-        if choice == 'subtract' or "-":
-            print(subtract())
-        elif choice == 'multiply' or "*":
-            print(multiply())
-        elif choice == 'devide' or "/":
-            print(devide())
-        elif choice == "add" or "+":
-            print(add())
+        continue
