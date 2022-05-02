@@ -1,29 +1,40 @@
-def subtract(num1, num2):
+def subtract():
         return num1 - num2
 
-def multiply(num1, num2):
+def multiply():
     return num1 * num2
 
-def devide(num1, num2):
+def devide():
     return num1 / num2
 
-def add(num1, num2):
+def add():
     return num1 + num2
 
 while True:
-    num1 = int(input('Choose a number: '))
-    choice = input('Type >> +, -, *, /: ')
-    num2 = int(input('Choose another number: '))
-    if choice == '-':
-        print(subtract(num1, num2))
-    elif choice == '*':
-        print(multiply(num1, num2))
-    elif choice == '/':
-        print(devide(num1, num2))
-    elif choice == '+':
-        print(add(num1, num2))
-    stop = input("Type quit to exit: ")
-    if stop == 'quit':
-        break
-    else:
-        continue
+    try:
+        num1 = int(input('Choose a number: '))
+        num2 = int(input('Choose another number: '))
+        choice = input('Type >> +, -, *, /: ')
+        if choice == '-':
+            print(subtract())
+        elif choice == '*':
+            print(multiply())
+        elif choice == '/':
+            print(devide())
+        elif choice == '+':
+            print(add())
+        else:
+            print("Type error")
+            continue
+    except:
+        print("enter integer")
+    finally:
+        again = input("Again? (y/n): ")
+        if again == 'n':
+            break
+        elif again == 'y':
+            print("\n")
+            continue
+        else:
+            print("answer error")
+            break
